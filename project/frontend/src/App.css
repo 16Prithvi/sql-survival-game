@@ -1,0 +1,58 @@
+/* Remove the centered text alignment that disrupts natural reading flow */
+.App {
+  min-height: 100vh;
+}
+
+/* Ensure Press Start 2P font loads properly */
+.retro-font {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.6;
+}
+
+/* Smooth transitions for interactive elements (excluding transforms) */
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+input, textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure proper contrast and readability */
+.dark-theme {
+  background-color: #0f0f10;
+  color: #f8fafc;
+}
+
+/* Custom pulse animation for gaming elements */
+@keyframes game-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.game-pulse {
+  animation: game-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Retro scan lines effect for authentic feel */
+.scan-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, rgba(0,255,0,0.02) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  animation: scan 0.1s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
