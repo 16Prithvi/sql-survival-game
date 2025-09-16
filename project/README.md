@@ -90,22 +90,13 @@ npm start
 ## Environment Variables
 
 ### Backend (.env)
-```env
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=survivor4_emerg
-CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-JWT_SECRET_KEY=your-secret-key-here
-JWT_ALGORITHM=HS256
-DEBUG=True
-PORT=8000
-HOST=0.0.0.0
+```
+
 ```
 
 ### Frontend (.env)
 ```env
-REACT_APP_API_URL=http://localhost:8000
-REACT_APP_API_BASE_URL=http://localhost:8000/api
-NODE_ENV=development
+
 ```
 
 ## Game Structure
