@@ -13,6 +13,12 @@ module.exports = {
     },
     configure: (webpackConfig) => {
       
+      // Ensure alias is preserved
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        '@': path.resolve(__dirname, 'src'),
+      };
+      
       // Add fallbacks for sql.js Node.js modules
       webpackConfig.resolve.fallback = {
         ...webpackConfig.resolve.fallback,
