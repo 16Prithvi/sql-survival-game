@@ -1,17 +1,31 @@
-# SQL Survival Game
+🎮 SQL Survival Game
+An interactive, story-driven game designed to make learning SQL an exciting adventure. Players find themselves stranded on a mysterious island and must use their SQL skills to query their way through challenges, gather resources, and uncover the secrets to their escape.
 
-An interactive SQL learning game where players solve database challenges across different themed zones (Beach, Jungle, Ancient Ruins).
+✨ Live Demo ✨
+Check out the deployed application on Vercel:
 
-## Features
+https://sql-survival-game.vercel.app/
 
-- 🏖️ **Beach Zone**: 15 levels of SQL challenges
-- 🌿 **Jungle Zone**: 20 levels of intermediate SQL challenges  
-- 🏛️ **Ruins Zone**: 15 levels of advanced SQL challenges
-- 💾 **Progress Saving**: Local storage with comprehensive game state
-- 🎨 **Zone Completion**: Animated completion pages with statistics
-- 📊 **Statistics Tracking**: Score, success rate, and progress tracking
-- 🎮 **Interactive UI**: Modern React interface with Tailwind CSS
+📸 Screenshot
+<img width="1833" height="849" alt="image" src="https://github.com/user-attachments/assets/2a590da4-f501-4a8c-8a1b-ff2d7e121df9" />
 
+
+Features
+🏝️ Themed, Progressive Zones: Journey through three unique zones, each with its own set of challenges that build on the last.
+
+🏖️ Beach Zone: Learn SQL basics through 15 engaging challenges focused on SELECT, WHERE, and ORDER BY.
+
+🌿 Jungle Zone: Master intermediate concepts across 20 levels covering JOIN operations, GROUP BY, and HAVING.
+
+🏛️ Ruins Zone: Tackle 15 advanced puzzles involving complex subqueries and window functions.
+
+💾 Comprehensive Progress Saving: Your entire game state, including completed levels and scores, is saved in local storage so you can pick up where you left off.
+
+🎨 Animated Zone Completion: Celebrate your progress with animated completion pages that display your statistics for each zone.
+
+📊 Detailed Statistics Tracking: Monitor your performance with trackers for your overall score, query success rate, and level progress.
+
+🎮 Interactive UI: A modern, responsive interface built with React and Tailwind CSS for a seamless gameplay experience.
 ## Tech Stack
 
 ### Frontend
