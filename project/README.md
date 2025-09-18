@@ -6,21 +6,23 @@ Check out the deployed application on Vercel:
 
 https://sql-survival-game.vercel.app/
 
-📸 Project Showcase
+📸 Project Showcase:
+
 Here's a glimpse into the world of "SQL Survival: The Data Isles."
 
 🚀 Engaging Landing Page
 A vibrant and animated landing page introduces players to the story of the Data Isles and invites them to begin their survival adventure.
 
 <img width="1833" height="849" alt="image" src="https://github.com/user-attachments/assets/2a590da4-f501-4a8c-8a1b-ff2d7e121df9" />
+
 🗺️ Interactive World Map
 Players navigate a stylized, interactive map to track their progress through the different zones. Completed areas are unlocked, visually guiding the journey from The Beach to The Ruins.
+
 <img width="1734" height="871" alt="image" src="https://github.com/user-attachments/assets/5294d7e7-4a2a-4bc4-bbc9-454917da8d1c" />
+
 💻 SQL Slate & Mission Log
 The core gameplay interface where players receive their mission briefing and write SQL queries in a live editor. The system provides instant feedback and results, creating an immersive learning loop.
 <img width="1451" height="881" alt="image" src="https://github.com/user-attachments/assets/73ce828e-630b-4d05-8b3d-d249f290535e" />
-
-
 
 
 Features
