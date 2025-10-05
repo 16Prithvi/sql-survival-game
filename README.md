@@ -186,7 +186,7 @@ uvicorn server:app --host 0.0.0.0 --port 8000
 
 ## License
 
-This project is licensed under the MIT License.
+© 2025 Prithvi. Licensed under the Apache License, Version 2.0.
 
 ## Support
 
