@@ -376,6 +376,22 @@ export const GameProvider = ({ children }) => {
     }
   };
 
+  // Get table data for a zone and table name
+  const getTableData = async (zone, tableName, limit = 10) => {
+    try {
+      const database = await initializeZoneDatabase(zone);
+      const query = `SELECT * FROM ${tableName} LIMIT ${limit}`;
+      const result = executeUserQuery(query, database);
+      if (result.success) {
+        return result.result;
+      }
+      return [];
+    } catch (error) {
+      console.error(`Failed to get table data for ${tableName}:`, error);
+      return [];
+    }
+  };
+
   // Get task data for a zone and level
   const getTask = (zone, level) => {
     return gameTasks[zone]?.[level - 1] || null;
@@ -477,6 +493,7 @@ export const GameProvider = ({ children }) => {
     skipLevel,
     executeQuery,
     getZoneSchema,
+    getTableData,
     getTask,
     initializeZoneDatabase,
     isLoading,

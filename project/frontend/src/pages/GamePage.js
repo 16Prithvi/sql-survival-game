@@ -3,19 +3,22 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Textarea } from '../components/ui/textarea';
-import { ArrowLeft, Play, Lightbulb, SkipForward, ChevronDown, ChevronRight, Loader2 } from 'lucide-react';
+import { ArrowLeft, Play, Lightbulb, SkipForward, ChevronDown, ChevronRight, Loader2, Table, BookOpen } from 'lucide-react';
 import { useGame } from '../context/GameContext';
+import QueryExplanation from '../components/QueryExplanation';
 
 const GamePage = () => {
   const { zone } = useParams();
   const navigate = useNavigate();
-  const { gameState, unlockNextLevel, skipLevel, executeQuery, getZoneSchema, getTask, isLoading, resetGameProgress, manualSave, isZoneCompleted } = useGame();
+  const { gameState, unlockNextLevel, skipLevel, executeQuery, getZoneSchema, getTableData, getTask, isLoading, resetGameProgress, manualSave, isZoneCompleted } = useGame();
   
   const [query, setQuery] = useState('');
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [showHint, setShowHint] = useState(false);
   const [expandedTables, setExpandedTables] = useState({});
+  const [tableData, setTableData] = useState({});
+  const [loadingTableData, setLoadingTableData] = useState({});
   const [schema, setSchema] = useState({});
   const [isExecuting, setIsExecuting] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -63,6 +66,9 @@ const GamePage = () => {
       try {
         const zoneSchema = await getZoneSchema(zone);
         setSchema(zoneSchema);
+        // Clear table data when zone changes
+        setTableData({});
+        setExpandedTables({});
       } catch (error) {
         console.error('Failed to load schema:', error);
       }
@@ -132,11 +138,77 @@ const GamePage = () => {
     }
   };
 
-  const toggleTable = (tableName) => {
+  const toggleTable = async (tableName) => {
+    const isExpanding = !expandedTables[tableName];
+    
     setExpandedTables(prev => ({
       ...prev,
       [tableName]: !prev[tableName]
     }));
+
+    // Fetch table data when expanding
+    if (isExpanding && !tableData[tableName]) {
+      setLoadingTableData(prev => ({ ...prev, [tableName]: true }));
+      try {
+        const data = await getTableData(zone, tableName, 10);
+        setTableData(prev => ({ ...prev, [tableName]: data }));
+      } catch (error) {
+        console.error(`Failed to load data for ${tableName}:`, error);
+        setTableData(prev => ({ ...prev, [tableName]: [] }));
+      } finally {
+        setLoadingTableData(prev => ({ ...prev, [tableName]: false }));
+      }
+    }
+  };
+
+  const renderTableData = (tableName, data) => {
+    if (!data || data.length === 0) {
+      return (
+        <div className="mt-2 pt-2">
+          <div className="text-xs text-gray-500 p-2">No data available</div>
+        </div>
+      );
+    }
+
+    const columns = Object.keys(data[0]);
+    const isLimited = data.length >= 10; // Assuming we're showing max 10 rows
+
+    return (
+      <div className="mt-2 pt-2">
+        <div className="text-xs text-gray-400 mb-2 font-semibold">
+          Sample Data{isLimited ? ` (first ${data.length} rows)` : ` (${data.length} rows)`}:
+        </div>
+        <div className="overflow-x-auto border border-gray-700 rounded-lg max-h-64 overflow-y-auto">
+          <table className="w-full text-xs">
+            <thead className="sticky top-0 bg-gray-900">
+              <tr className="border-b border-gray-700">
+                {columns.map(col => (
+                  <th key={col} className="px-2 py-1.5 text-left text-gray-300 font-mono font-semibold whitespace-nowrap">
+                    {col}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((row, idx) => (
+                <tr key={idx} className="border-b border-gray-700/50 hover:bg-gray-900/50">
+                  {columns.map(col => (
+                    <td key={col} className="px-2 py-1.5 text-gray-300 font-mono whitespace-nowrap">
+                      {row[col]}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {isLimited && (
+          <div className="text-xs text-gray-500 mt-1 italic">
+            Showing first 10 rows. Use SELECT * FROM {tableName} to see all data.
+          </div>
+        )}
+      </div>
+    );
   };
 
   const canSkip = currentLevelData?.attempts >= 3;
@@ -289,6 +361,7 @@ const GamePage = () => {
             <Card className="bg-gray-800/80 border-gray-700/50 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-sm text-gray-300 flex items-center">
+                  <Table className="w-4 h-4 mr-2" />
                   Database Schema
                   {isLoading && <Loader2 className="w-4 h-4 ml-2 animate-spin" />}
                 </CardTitle>
@@ -310,17 +383,41 @@ const GamePage = () => {
                         }
                       </button>
                       {expandedTables[tableName] && (
-                        <div className="px-2 pb-2 space-y-1">
-                          {columns.map(column => (
-                            <div key={column} className="text-xs text-gray-400 font-mono pl-4">
-                              {column}
+                        <div className="px-2 pb-2">
+                          {/* Table Data */}
+                          {loadingTableData[tableName] ? (
+                            <div className="mt-2 pt-2 border-t border-gray-700">
+                              <div className="text-xs text-gray-500 p-2 flex items-center gap-2">
+                                <Loader2 className="w-3 h-3 animate-spin" />
+                                Loading data...
+                              </div>
                             </div>
-                          ))}
+                          ) : (
+                            tableData[tableName] && renderTableData(tableName, tableData[tableName])
+                          )}
                         </div>
                       )}
                     </div>
                   ))
                 )}
+              </CardContent>
+            </Card>
+
+            {/* Reference Guide Link */}
+            <Card className="bg-gray-800/80 border-gray-700/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-sm text-gray-300">Help & Reference</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Button
+                  onClick={() => navigate('/reference')}
+                  variant="outline"
+                  className="w-full border-blue-600 text-blue-400 hover:bg-blue-600/10"
+                  size="sm"
+                >
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  SQL Reference Guide
+                </Button>
               </CardContent>
             </Card>
 
@@ -559,6 +656,11 @@ SELECT * FROM survivors;"
                     <Play className="w-12 h-12 mx-auto mb-2 opacity-50" />
                     <p>Awaiting Command... Enter a query and press Execute.</p>
                   </div>
+                )}
+                
+                {/* Query Explanation */}
+                {query && query.trim() && (
+                  <QueryExplanation query={query} showOptimization={true} />
                 )}
               </CardContent>
             </Card>

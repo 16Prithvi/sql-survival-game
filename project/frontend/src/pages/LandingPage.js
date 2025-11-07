@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { Waves, Brain, Search, MapPin } from 'lucide-react';
+import { Waves, Brain, Search, MapPin, BookOpen, PlayCircle } from 'lucide-react';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const LandingPage = () => {
             SQL SURVIVAL
           </h1>
           <Button 
-            onClick={() => navigate('/map')}
+            onClick={() => navigate('/lesson')}
             className="bg-blue-600 hover:bg-blue-500 text-white border-2 border-blue-400 shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-400/40 hover:scale-105"
             style={{ fontFamily: '"Press Start 2P", monospace' }}
           >
@@ -49,7 +49,7 @@ const LandingPage = () => {
             Query databases to find resources, decode mysteries, and escape the island!
           </p>
           <Button 
-            onClick={() => navigate('/map')}
+            onClick={() => navigate('/lesson')}
             size="lg"
             className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white border-2 border-cyan-400 shadow-xl shadow-cyan-500/25 transition-all duration-300 hover:shadow-cyan-400/50 hover:scale-110 text-lg px-8 py-4"
             style={{ fontFamily: '"Press Start 2P", monospace' }}
@@ -113,6 +113,98 @@ const LandingPage = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Lessons Section */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 
+              className="text-3xl mb-4 text-blue-300"
+              style={{ fontFamily: '"Press Start 2P", monospace' }}
+            >
+              INTERACTIVE SQL LESSONS
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Build your SQL foundation with comprehensive lessons before exploring the island. Learn theory, see examples, and practice with a real SQL editor.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <Card className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border-2 border-cyan-400/50 shadow-xl shadow-cyan-500/30 hover:shadow-cyan-400/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <BookOpen className="w-12 h-12 text-cyan-400 flex-shrink-0" />
+                  <div>
+                    <h3 
+                      className="text-xl mb-2 text-cyan-300"
+                      style={{ fontFamily: '"Press Start 2P", monospace' }}
+                    >
+                      THEORY & EXAMPLES
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-4">
+                  Each lesson includes clear explanations of SQL concepts with real-world examples. Understand the fundamentals before applying them.
+                </p>
+                <div className="text-sm text-cyan-400 space-y-1">
+                  <div>• Step-by-step explanations</div>
+                  <div>• Code examples with results</div>
+                  <div>• Visual table previews</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border-2 border-blue-400/50 shadow-xl shadow-blue-500/30 hover:shadow-blue-400/50 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <PlayCircle className="w-12 h-12 text-blue-400 flex-shrink-0" />
+                  <div>
+                    <h3 
+                      className="text-xl mb-2 text-blue-300"
+                      style={{ fontFamily: '"Press Start 2P", monospace' }}
+                    >
+                      HANDS-ON PRACTICE
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-4">
+                  Practice SQL queries in a real editor with instant feedback. Complete tasks to master each concept and track your progress.
+                </p>
+                <div className="text-sm text-blue-400 space-y-1">
+                  <div>• Interactive SQL editor</div>
+                  <div>• Instant query validation</div>
+                  <div>• Progress tracking</div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="bg-gray-800/60 border-2 border-yellow-400/50 rounded-lg p-6 backdrop-blur-sm">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl">📚</div>
+              <div className="flex-1">
+                <h3 
+                  className="text-xl mb-3 text-yellow-300"
+                  style={{ fontFamily: '"Press Start 2P", monospace' }}
+                >
+                  8 COMPREHENSIVE LESSONS
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Master SQL from basics to advanced topics: SELECT queries, WHERE clauses, JOINs, aggregations, subqueries, CTEs, window functions, and more.
+                </p>
+                <div className="grid md:grid-cols-2 gap-2 text-sm text-yellow-400">
+                  <div>• Basic SELECT & WHERE</div>
+                  <div>• Sorting & Filtering</div>
+                  <div>• JOIN Operations</div>
+                  <div>• Aggregations</div>
+                  <div>• Subqueries</div>
+                  <div>• Common Table Expressions</div>
+                  <div>• Window Functions</div>
+                  <div>• Advanced Patterns</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

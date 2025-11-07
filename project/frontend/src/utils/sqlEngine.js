@@ -28,6 +28,9 @@ export const createZoneDatabase = async (zone) => {
     case 'ruins':
       await setupRuinsDatabase(db);
       break;
+    case 'lessons':
+      await setupLessonsDatabase(db);
+      break;
     default:
       throw new Error(`Unknown zone: ${zone}`);
   }
@@ -293,6 +296,133 @@ export const getDatabaseSchema = (database) => {
     console.error('Error getting database schema:', error);
     return {};
   }
+};
+
+// Lessons database setup - Generic educational tables
+const setupLessonsDatabase = (db) => {
+  // Create tables for lessons (generic business/educational context)
+  // Create base tables first (no foreign keys)
+  db.exec(`
+    CREATE TABLE employees (
+      employee_id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      age INTEGER,
+      department TEXT,
+      salary INTEGER
+    );
+
+    CREATE TABLE customers (
+      customer_id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT,
+      city TEXT,
+      country TEXT
+    );
+
+    CREATE TABLE products (
+      product_id INTEGER PRIMARY KEY,
+      product_name TEXT NOT NULL,
+      category TEXT,
+      price DECIMAL(10, 2),
+      stock_quantity INTEGER
+    );
+
+    CREATE TABLE categories (
+      category_id INTEGER PRIMARY KEY,
+      category_name TEXT,
+      description TEXT,
+      parent_category_id INTEGER
+    );
+  `);
+
+  // Create tables with foreign keys
+  db.exec(`
+    CREATE TABLE orders (
+      order_id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
+      order_date DATE,
+      total_amount DECIMAL(10, 2),
+      status TEXT,
+      FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
+    );
+
+    CREATE TABLE order_items (
+      item_id INTEGER PRIMARY KEY,
+      order_id INTEGER,
+      product_id INTEGER,
+      quantity INTEGER,
+      price DECIMAL(10, 2),
+      FOREIGN KEY (order_id) REFERENCES orders (order_id),
+      FOREIGN KEY (product_id) REFERENCES products (product_id)
+    );
+
+    CREATE TABLE inventory (
+      inventory_id INTEGER PRIMARY KEY,
+      product_id INTEGER,
+      warehouse_location TEXT,
+      quantity INTEGER,
+      last_updated DATE,
+      FOREIGN KEY (product_id) REFERENCES products (product_id)
+    );
+  `);
+
+  // Insert sample data (order matters for foreign keys)
+  // First insert base tables
+  db.exec(`
+    INSERT INTO employees (employee_id, name, age, department, salary) VALUES
+    (1, 'John Smith', 32, 'Engineering', 75000),
+    (2, 'Sarah Johnson', 28, 'Marketing', 65000),
+    (3, 'Michael Brown', 45, 'Sales', 80000),
+    (4, 'Emily Davis', 35, 'Engineering', 78000),
+    (5, 'David Wilson', 29, 'HR', 60000);
+
+    INSERT INTO customers (customer_id, name, email, city, country) VALUES
+    (1, 'Alice Cooper', 'alice@email.com', 'New York', 'USA'),
+    (2, 'Bob Miller', 'bob@email.com', 'London', 'UK'),
+    (3, 'Carol White', 'carol@email.com', 'Toronto', 'Canada'),
+    (4, 'Daniel Green', 'daniel@email.com', 'Sydney', 'Australia'),
+    (5, 'Eva Black', 'eva@email.com', 'Berlin', 'Germany');
+
+    INSERT INTO products (product_id, product_name, category, price, stock_quantity) VALUES
+    (1, 'Laptop', 'Electronics', 999.99, 50),
+    (2, 'Mouse', 'Electronics', 29.99, 200),
+    (3, 'Desk Chair', 'Furniture', 199.99, 30),
+    (4, 'Monitor', 'Electronics', 299.99, 75),
+    (5, 'Keyboard', 'Electronics', 79.99, 150),
+    (6, 'Office Desk', 'Furniture', 399.99, 20),
+    (7, 'Webcam', 'Electronics', 89.99, 100);
+
+    INSERT INTO categories (category_id, category_name, description, parent_category_id) VALUES
+    (1, 'Electronics', 'Electronic devices and accessories', NULL),
+    (2, 'Furniture', 'Office and home furniture', NULL),
+    (3, 'Computers', 'Desktop and laptop computers', 1),
+    (4, 'Accessories', 'Computer and tech accessories', 1);
+  `);
+
+  // Then insert tables with foreign keys
+  db.exec(`
+    INSERT INTO orders (order_id, customer_id, order_date, total_amount, status) VALUES
+    (1, 1, '2025-01-15', 999.99, 'Completed'),
+    (2, 2, '2025-01-16', 329.98, 'Pending'),
+    (3, 1, '2025-01-17', 199.99, 'Completed'),
+    (4, 3, '2025-01-18', 599.98, 'Shipped'),
+    (5, 4, '2025-01-19', 89.99, 'Pending');
+
+    INSERT INTO order_items (item_id, order_id, product_id, quantity, price) VALUES
+    (1, 1, 1, 1, 999.99),
+    (2, 2, 2, 2, 29.99),
+    (3, 2, 4, 1, 299.99),
+    (4, 3, 3, 1, 199.99),
+    (5, 4, 4, 2, 299.99),
+    (6, 5, 7, 1, 89.99);
+
+    INSERT INTO inventory (inventory_id, product_id, warehouse_location, quantity, last_updated) VALUES
+    (1, 1, 'Warehouse A', 30, '2025-01-10'),
+    (2, 1, 'Warehouse B', 20, '2025-01-12'),
+    (3, 2, 'Warehouse A', 150, '2025-01-11'),
+    (4, 3, 'Warehouse C', 30, '2025-01-09'),
+    (5, 4, 'Warehouse A', 50, '2025-01-13');
+  `);
 };
 
 // Compare query results for validation
