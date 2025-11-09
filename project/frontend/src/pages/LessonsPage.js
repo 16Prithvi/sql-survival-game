@@ -539,6 +539,15 @@ const LessonsPage = () => {
                 <FileText className="w-3 h-3 mr-1" />
                 Reference
               </Button>
+              <Button
+                onClick={() => navigate('/map')}
+                variant="outline"
+                size="sm"
+                className="border-green-600 text-green-400 hover:bg-green-600/10 h-8"
+              >
+                <Play className="w-3 h-3 mr-1" />
+                Skip to Game
+              </Button>
               <div>
                 <h1 className="text-lg font-bold text-blue-400">SQL LESSONS</h1>
                 <div className="text-xs text-gray-400">
