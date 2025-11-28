@@ -47,17 +47,19 @@
 
 ## 📸 Visual Tour
 
+### 🚀 The Adventure Begins
+A beautifully animated landing experience introducing the Data Isles world.  
+<img width="100%" alt="Landing Page" src="https://github.com/user-attachments/assets/2a590da4-f501-4a8c-8a1b-ff2d7e121df9" />
+
+<br />
+
+
 ### 🧩 Interactive SQL Practice Interface
 A dynamic environment where players execute live SQL queries and view real-time results.  
 <img width="1839" height="890" alt="Screenshot 2025-11-28 122423" src="https://github.com/user-attachments/assets/348395d0-6e13-4eb4-abb2-fbfeff9cd63b" />
 
 <br />
 
-### 🚀 The Adventure Begins
-A beautifully animated landing experience introducing the Data Isles world.  
-<img width="100%" alt="Landing Page" src="https://github.com/user-attachments/assets/2a590da4-f501-4a8c-8a1b-ff2d7e121df9" />
-
-<br />
 
 ### 🗺️ The World Map
 Visual progression system showing player advancement across different regions.  
@@ -126,12 +128,23 @@ Ensure you have:
 # Clone the repository
 git clone <your-repo-url>
 cd sql-survival
-
+```
+### Frontend Setup
+```bash
+cd ../frontend
+npm install
+cp env_frontend.txt .env
+npm start
+Environment Variables
+```
 ### Backend Setup
+```bash
 cd backend
 python -m venv venv
-
+```
 ### Windows
+```bash
+
 venv\Scripts\activate
 
 ### macOS/Linux
@@ -139,26 +152,26 @@ source venv/bin/activate
 pip install -r requirements.txt
 cp env_backend.txt .env
 uvicorn server:app --reload --host 0.0.0.0 --port 8000
+```
 
-### Frontend Setup
-cd ../frontend
-npm install
-cp env_frontend.txt .env
-npm start
-Environment Variables
 
 ### Backend (.env)
+```bash
 MONGODB_URL=mongodb://localhost:27017/sql_survival
 SECRET_KEY=your_secret_key_here
-
+```
 ### Frontend (.env)
+```bash
 REACT_APP_API_URL=http://localhost:8000
-
+```
 ### 🧪 Testing
+```bash
+
 # Backend tests
 cd backend && pytest
 
 # Frontend tests
 cd frontend && npm test
-
-🧑‍💻 Developer<div align="center">NameRolePrithvi GanigerFull Stack Developer & Game Architect<br />💬 Connect with Me<a href="mailto:prithviganiger@gmail.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-prithviganiger%2540gmail.com-red%3Fstyle%3Dflat%26logo%3Dgmail%26logoColor%3Dwhite" alt="Email" /></a><a href="https://www.google.com/search?q=https://linkedin.com/in/prithvi-ganiger-10bb11365"><img src="https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-Prithvi%2520Ganiger-0077B5%3Fstyle%3Dflat%26logo%3Dlinkedin%26logoColor%3Dwhite" alt="LinkedIn" /></a></div>
+```
+🧑‍💻 Developer
+<div align="center">NameRolePrithvi GanigerFull Stack Developer & Game Architect<br />💬 Connect with Me<a href="mailto:prithviganiger@gmail.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-prithviganiger%2540gmail.com-red%3Fstyle%3Dflat%26logo%3Dgmail%26logoColor%3Dwhite" alt="Email" /></a><a href="https://www.google.com/search?q=https://linkedin.com/in/prithvi-ganiger-10bb11365"><img src="https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-Prithvi%2520Ganiger-0077B5%3Fstyle%3Dflat%26logo%3Dlinkedin%26logoColor%3Dwhite" alt="LinkedIn" /></a></div>
