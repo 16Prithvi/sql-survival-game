@@ -173,17 +173,4 @@ cd backend && pytest
 # Frontend tests
 cd frontend && npm test
 ```
-<div align="center">
 
-<h3>🧑‍💻 Developer</h3>
-
-<p> <b>Prithvi Ganiger</b>
-
-
-Full Stack Developer & Game Architect </p>
-
-<h3>💬 Connect with Me</h3>
-
-<p> <a href="mailto:prithviganiger@gmail.com"> <img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-prithviganiger%2540gmail.com-red%3Fstyle%3Dflat%26logo%3Dgmail%26logoColor%3Dwhite" alt="Email" /> </a> &nbsp;&nbsp; <a href="https://www.google.com/search?q=https://linkedin.com/in/prithvi-ganiger-10bb11365"> <img src="https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-Prithvi%2520Ganiger-0077B5%3Fstyle%3Dflat%26logo%3Dlinkedin%26logoColor%3Dwhite" alt="LinkedIn" /> </a> </p>
-
-</div>
