@@ -1,193 +1,167 @@
-🎮 SQL Survival Game
-An interactive, story-driven game designed to make learning SQL an exciting adventure. Players find themselves stranded on a mysterious island and must use their SQL skills to query their way through challenges, gather resources, and uncover the secrets to their escape.
+<div align="center">
+  <br />
+  <img src="https://img.icons8.com/fluency/96/console.png" alt="SQL Survival Logo" />
+  <h1>🎮 SQL Survival: The Data Isles</h1>
+  <h3>The only way off the island... is a query.</h3>
 
-✨ Live Demo ✨
-Check out the deployed application on Vercel:
+  <p>
+    An interactive, story-driven adventure game designed to master SQL. <br />
+    Stranded on a mysterious island, you must write code to survive, gather resources, and uncover the secrets of the ancients.
+  </p>
 
-https://sql-survival-game.vercel.app/
+  <p>
+    <a href="https://sql-survival-game.vercel.app/">
+      <img src="https://img.shields.io/badge/PLAY_NOW-Live_Demo-2ea44f?style=for-the-badge&logo=vercel" alt="Live Demo" />
+    </a>
+  </p>
 
-📸 Project Showcase:
+  <p>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  </p>
+</div>
 
-Here's a glimpse into the world of "SQL Survival: The Data Isles."
+---
 
-🚀 Engaging Landing Page
-A vibrant and animated landing page introduces players to the story of the Data Isles and invites them to begin their survival adventure.
+## 📖 The Lore
 
-<img width="1833" height="849" alt="image" src="https://github.com/user-attachments/assets/2a590da4-f501-4a8c-8a1b-ff2d7e121df9" />
+> *"You wake up on the wet sand, the wreckage of your ship scattered along the shore. A glowing slate lies beside you, pulsing with strange symbols. To survive the Data Isles, you must learn to speak the language of the island—Structured Query Language. Every query brings you closer to the truth... or closer to danger."*
 
-🗺️ Interactive World Map
-Players navigate a stylized, interactive map to track their progress through the different zones. Completed areas are unlocked, visually guiding the journey from The Beach to The Ruins.
+## 📸 Visual Tour
 
-<img width="1734" height="871" alt="image" src="https://github.com/user-attachments/assets/5294d7e7-4a2a-4bc4-bbc9-454917da8d1c" />
+### 🚀 The Adventure Begins
+A vibrant, animated entry point into the world of the Data Isles.
+<img width="100%" alt="Landing Page" src="https://github.com/user-attachments/assets/2a590da4-f501-4a8c-8a1b-ff2d7e121df9" />
 
-💻 SQL Slate & Mission Log
-The core gameplay interface where players receive their mission briefing and write SQL queries in a live editor. The system provides instant feedback and results, creating an immersive learning loop.
-<img width="1451" height="881" alt="image" src="https://github.com/user-attachments/assets/73ce828e-630b-4d05-8b3d-d249f290535e" />
+<br />
 
+### 🗺️ The World Map
+Navigate through unlocked territories. Track your journey from the safety of the Beach to the mysterious Ruins.
+<img width="100%" alt="World Map" src="https://github.com/user-attachments/assets/5294d7e7-4a2a-4bc4-bbc9-454917da8d1c" />
 
-Features
-🏝️ Themed, Progressive Zones: Journey through three unique zones, each with its own set of challenges that build on the last.
+<br />
 
-🏖️ Beach Zone: Learn SQL basics through 15 engaging challenges focused on SELECT, WHERE, and ORDER BY.
+### 💻 The SQL Slate (Mission Log)
+The core gameplay loop. Receive briefings, write live queries, and get instant feedback from the island's database.
+<img width="100%" alt="SQL Slate" src="https://github.com/user-attachments/assets/73ce828e-630b-4d05-8b3d-d249f290535e" />
 
-🌿 Jungle Zone: Master intermediate concepts across 20 levels covering JOIN operations, GROUP BY, and HAVING.
+---
 
-🏛️ Ruins Zone: Tackle 15 advanced puzzles involving complex subqueries and window functions.
+## ✨ Key Features
 
-💾 Comprehensive Progress Saving: Your entire game state, including completed levels and scores, is saved in local storage so you can pick up where you left off.
+### 🎮 Gameplay Mechanics
+* **Progressive Difficulty:** Journey through 3 unique zones, scaling from novice to expert.
+* **Persistent Saves:** Your game state, inventory, and unlocked levels are saved locally.
+* **Instant Feedback:** The `SQL.js` engine provides immediate validation of your syntax and logic.
+* **Gamified Rewards:** Unlock animated completion screens and badges as you conquer zones.
 
-🎨 Animated Zone Completion: Celebrate your progress with animated completion pages that display your statistics for each zone.
+### 📊 Player Statistics
+* **Performance Tracking:** Monitor your global query success rate.
+* **Mission History:** Review past solutions and optimize your code.
 
-📊 Detailed Statistics Tracking: Monitor your performance with trackers for your overall score, query success rate, and level progress.
+### 🎨 Modern Experience
+* **Responsive UI:** Built with **Radix UI** and **Tailwind CSS** for a polished look on any device.
+* **Immersive Audio:** (Optional) Ambient soundscapes matching the zone environment.
 
-🎮 Interactive UI: A modern, responsive interface built with React and Tailwind CSS for a seamless gameplay experience.
-## Tech Stack
+---
+
+## 🗺️ Game Zones & Curriculum
+
+| Zone | Environment | Levels | SQL Concepts Mastered |
+| :--- | :--- | :---: | :--- |
+| **Zone 1** | 🏖️ **The Beach** | 15 | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT` |
+| **Zone 2** | 🌿 **The Jungle** | 20 | `INNER JOIN`, `LEFT JOIN`, `GROUP BY`, `HAVING`, Aggregates |
+| **Zone 3** | 🏛️ **The Ruins** | 15 | Subqueries, Window Functions (`RANK`, `OVER`), CTEs |
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- React 19
-- Tailwind CSS
-- Radix UI Components
-- React Router DOM
-- SQL.js (client-side SQL engine)
+* **Framework:** React 19
+* **Routing:** React Router DOM
+* **Styling:** Tailwind CSS + Radix UI Primitives
+* **Logic:** SQL.js (Client-side WASM SQL engine)
 
 ### Backend
-- FastAPI (Python)
-- MongoDB
-- Uvicorn (ASGI server)
-- Pydantic (data validation)
+* **API:** FastAPI (Python)
+* **Server:** Uvicorn (ASGI)
+* **Database:** MongoDB (Player analytics & global leaderboards)
+* **Validation:** Pydantic models
 
-## Setup Instructions
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the game locally.
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- Python 3.8+
-- MongoDB (local or cloud)
+* Node.js (v16+)
+* Python 3.8+
+* MongoDB Instance (Local or Atlas)
 
-### 1. Clone the Repository
+### 1. Clone the Project
 ```bash
 git clone <your-repo-url>
 cd survivor4-emerg/project
-```
 
-### 2. Backend Setup
+### 2. Backend Configuration
 ```bash
 cd backend
 
-# Create virtual environment
+# Create & Activate Virtual Environment
 python -m venv venv
-
-# Activate virtual environment
 # Windows:
 venv\Scripts\activate
-# macOS/Linux:
+
+# Mac/Linux:
 source venv/bin/activate
 
-# Install dependencies
+# Install Dependencies
 pip install -r requirements.txt
 
-# Create .env file (copy from env_backend.txt)
-copy env_backend.txt .env
-# or on macOS/Linux:
+# Setup Environment Variables
+# Create a .env file based on env_backend.txt
 cp env_backend.txt .env
 
-# Edit .env file with your MongoDB connection string
-# Start the backend server
+# Run Server
 uvicorn server:app --reload --host 0.0.0.0 --port 8000
-```
 
-### 3. Frontend Setup
+### 3. Frontend Configuration
 ```bash
+
 cd frontend
 
-# Install dependencies
+# Install Dependencies
 npm install
 
-# Create .env file (copy from env_frontend.txt)
-copy env_frontend.txt .env
-# or on macOS/Linux:
+# Setup Environment Variables
+# Create a .env file based on env_frontend.txt
 cp env_frontend.txt .env
 
-# Start the development server
+# Run Client
 npm start
-```
 
-### 4. Access the Application
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
-- API Documentation: http://localhost:8000/docs
-
-## Environment Variables
-
-### Backend (.env)
-```
-
-```
-
-### Frontend (.env)
-```env
-
-```
-
-## Game Structure
-
-### Zones
-1. **Beach Zone** (15 levels)
-   - Basic SELECT queries
-   - WHERE clauses
-   - ORDER BY sorting
-
-2. **Jungle Zone** (20 levels)
-   - JOIN operations
-   - GROUP BY aggregations
-   - HAVING clauses
-
-3. **Ruins Zone** (15 levels)
-   - Complex subqueries
-   - Window functions
-   - Advanced SQL features
-
-### Progress System
-- **Local Storage**: All progress saved locally
-- **Statistics**: Score, success rate, levels completed
-- **Zone Unlocking**: Complete zones to unlock next areas
-- **Completion Pages**: Animated celebration screens
-
-## Development
-
-### Running Tests
+### 4. 🔐Environment Variables
 ```bash
-# Backend tests
-cd backend
-python -m pytest
+Ensure your .env files are populated correctly:
 
-# Frontend tests
-cd frontend
-npm test
-```
+Backend (backend/.env)
 
-### Building for Production
+MONGODB_URL=mongodb://localhost:27017/sql_survival
+SECRET_KEY=your_secret_key_here
+Frontend (frontend/.env
+
+REACT_APP_API_URL=http://localhost:8000
+
+### 5.🧪 Testing
 ```bash
-# Frontend build
-cd frontend
-npm run build
 
-# Backend (no build step needed)
-cd backend
-uvicorn server:app --host 0.0.0.0 --port 8000
-```
+# Backend Tests (Pytest)
+cd backend && python -m pytest
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-© 2025 Prithvi. Licensed under the Apache License, Version 2.0.
-
-## Support
-
-For issues and questions, please create an issue in the GitHub repository.
+# Frontend Tests (Jest)
+cd frontend && npm test
