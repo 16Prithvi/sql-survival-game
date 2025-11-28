@@ -42,15 +42,14 @@
 - 🗺️ **Expanded World Map:** Unlock new islands and progressive learning zones.  
 - 🧾 **New Lessons & Quests:** Over 50 guided missions with tiered difficulty.  
 - 💾 **Auto Progress Save:** Player progress stored locally with resume capability.  
-- 🖼️ **Enhanced SQL Sandbox:** Practice environment to experiment freely with SQL logic.
-
+- 🧩 **Query Execution Order Visualization:** Interactive guide showing how SQL queries are executed step-by-step.
 ---
 
 ## 📸 Visual Tour
 
 ### 🧩 Interactive SQL Practice Interface
 A dynamic environment where players execute live SQL queries and view real-time results.  
-<img width="100%" alt="SQL Practice Interface" src="https://github.com/user-attachments/assets/NEW_IMAGE_ID_HERE" />
+<img width="1839" height="890" alt="Screenshot 2025-11-28 122423" src="https://github.com/user-attachments/assets/348395d0-6e13-4eb4-abb2-fbfeff9cd63b" />
 
 <br />
 
@@ -128,44 +127,38 @@ Ensure you have:
 git clone <your-repo-url>
 cd sql-survival
 
-# Backend Setup
+### Backend Setup
 cd backend
 python -m venv venv
-# Windows
+
+### Windows
 venv\Scripts\activate
-# macOS/Linux
+
+### macOS/Linux
 source venv/bin/activate
 pip install -r requirements.txt
 cp env_backend.txt .env
 uvicorn server:app --reload --host 0.0.0.0 --port 8000
 
-# Frontend Setup
+### Frontend Setup
 cd ../frontend
 npm install
 cp env_frontend.txt .env
 npm start
 Environment Variables
-bash
-Copy code
-# Backend (.env)
+
+### Backend (.env)
 MONGODB_URL=mongodb://localhost:27017/sql_survival
 SECRET_KEY=your_secret_key_here
 
-# Frontend (.env)
+### Frontend (.env)
 REACT_APP_API_URL=http://localhost:8000
-🧪 Testing
-bash
-Copy code
+
+### 🧪 Testing
 # Backend tests
 cd backend && pytest
 
 # Frontend tests
 cd frontend && npm test
 
-🧑‍💻 Developer
-Name	Role
-Prithvi Ganiger	Full Stack Developer & Game Architect
-
-💬 Contact
-📧 Email: prithviganiger@gmail.com
-🔗 LinkedIn: linkedin.com/in/prithvi-ganiger-10bb11365
+🧑‍💻 Developer<div align="center">NameRolePrithvi GanigerFull Stack Developer & Game Architect<br />💬 Connect with Me<a href="mailto:prithviganiger@gmail.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-prithviganiger%2540gmail.com-red%3Fstyle%3Dflat%26logo%3Dgmail%26logoColor%3Dwhite" alt="Email" /></a><a href="https://www.google.com/search?q=https://linkedin.com/in/prithvi-ganiger-10bb11365"><img src="https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-Prithvi%2520Ganiger-0077B5%3Fstyle%3Dflat%26logo%3Dlinkedin%26logoColor%3Dwhite" alt="LinkedIn" /></a></div>
