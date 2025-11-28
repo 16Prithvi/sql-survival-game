@@ -34,13 +34,13 @@
 
 ---
 
-## 🆕 2025 Update Highlights
+##  Highlights
 
 - 🧠 **Interactive SQL Practice Engine:** Real-time query editor with data visualization and live syntax feedback.  
-- 🎨 **Modern UI Overhaul:** Sleek dark interface with Tailwind, animations, and responsive layout.  
-- ⚡ **Instant Validation:** Query results rendered dynamically via SQL.js.  
-- 🗺️ **Expanded World Map:** Unlock new islands and progressive learning zones.  
-- 🧾 **New Lessons & Quests:** Over 50 guided missions with tiered difficulty.  
+- 🎨 **Modern UI:** Sleek dark interface with Tailwind, animations, and responsive layout.  
+- ⚡ **Instant Query Validation:** Query results rendered dynamically via SQL.js.  
+- 🗺️ **World Map:** Unlock new islands and progressive learning zones.  
+- 🧾 **Lessons & Quests:** Over 50 guided missions with tiered difficulty.  
 - 💾 **Auto Progress Save:** Player progress stored locally with resume capability.  
 - 🧩 **Query Execution Order Visualization:** Interactive guide showing how SQL queries are executed step-by-step.
 ---
@@ -173,5 +173,17 @@ cd backend && pytest
 # Frontend tests
 cd frontend && npm test
 ```
-🧑‍💻 Developer
-<div align="center">NameRolePrithvi GanigerFull Stack Developer & Game Architect<br />💬 Connect with Me<a href="mailto:prithviganiger@gmail.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-prithviganiger%2540gmail.com-red%3Fstyle%3Dflat%26logo%3Dgmail%26logoColor%3Dwhite" alt="Email" /></a><a href="https://www.google.com/search?q=https://linkedin.com/in/prithvi-ganiger-10bb11365"><img src="https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-Prithvi%2520Ganiger-0077B5%3Fstyle%3Dflat%26logo%3Dlinkedin%26logoColor%3Dwhite" alt="LinkedIn" /></a></div>
+<div align="center">
+
+<h3>🧑‍💻 Developer</h3>
+
+<p> <b>Prithvi Ganiger</b>
+
+
+Full Stack Developer & Game Architect </p>
+
+<h3>💬 Connect with Me</h3>
+
+<p> <a href="mailto:prithviganiger@gmail.com"> <img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-prithviganiger%2540gmail.com-red%3Fstyle%3Dflat%26logo%3Dgmail%26logoColor%3Dwhite" alt="Email" /> </a> &nbsp;&nbsp; <a href="https://www.google.com/search?q=https://linkedin.com/in/prithvi-ganiger-10bb11365"> <img src="https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-Prithvi%2520Ganiger-0077B5%3Fstyle%3Dflat%26logo%3Dlinkedin%26logoColor%3Dwhite" alt="LinkedIn" /> </a> </p>
+
+</div>
